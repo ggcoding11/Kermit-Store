@@ -1,0 +1,100 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" version="29.6.1">
+  <diagram name="Page-1" id="jdU_nE6cBVT5_ZYQhZtu">
+    <mxGraphModel dx="2005" dy="579" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="_TG2oPKM00oFITE-QT6h-1" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="Product" vertex="1">
+          <mxGeometry height="200" width="220" x="-320" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="_TG2oPKM00oFITE-QT6h-2" parent="_TG2oPKM00oFITE-QT6h-1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="- id: Long&lt;div&gt;- name: String&lt;/div&gt;&lt;div&gt;- brand: String&lt;/div&gt;&lt;div&gt;- category: Enum&lt;/div&gt;&lt;div&gt;- imageName: String&lt;/div&gt;&lt;div&gt;- creationDate: LocalDate&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="94" width="220" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="_TG2oPKM00oFITE-QT6h-3" parent="_TG2oPKM00oFITE-QT6h-1" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="220" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="_TG2oPKM00oFITE-QT6h-4" parent="_TG2oPKM00oFITE-QT6h-1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="@Getter&lt;div&gt;@Setter&lt;/div&gt;&lt;div&gt;@NoArgsConstructor&lt;/div&gt;&lt;div&gt;@AllArgsConstructor&lt;/div&gt;" vertex="1">
+          <mxGeometry height="72" width="220" y="128" as="geometry" />
+        </mxCell>
+        <mxCell id="_TG2oPKM00oFITE-QT6h-9" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Interface&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;ProductRepository&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="70" width="190" x="145" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="_TG2oPKM00oFITE-QT6h-11" parent="1" style="html=1;whiteSpace=wrap;" value="&lt;b&gt;JpaRepository&amp;lt;Product, Long&amp;gt;&lt;/b&gt;" vertex="1">
+          <mxGeometry height="60" width="210" x="425" y="95" as="geometry" />
+        </mxCell>
+        <mxCell id="_TG2oPKM00oFITE-QT6h-12" edge="1" parent="1" source="_TG2oPKM00oFITE-QT6h-9" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="_TG2oPKM00oFITE-QT6h-11" value="Extends">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="155" y="230" as="sourcePoint" />
+            <mxPoint x="315" y="230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_TG2oPKM00oFITE-QT6h-15" edge="1" parent="1" source="_TG2oPKM00oFITE-QT6h-9" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;entryX=0.995;entryY=0.865;entryDx=0;entryDy=0;entryPerimeter=0;" target="_TG2oPKM00oFITE-QT6h-2" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="315" y="230" as="sourcePoint" />
+            <mxPoint x="155" y="230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_TG2oPKM00oFITE-QT6h-16" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="ProductService" vertex="1">
+          <mxGeometry height="150" width="260" x="110" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="_TG2oPKM00oFITE-QT6h-17" parent="_TG2oPKM00oFITE-QT6h-16" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="- ProductRepository repository" vertex="1">
+          <mxGeometry height="26" width="260" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="_TG2oPKM00oFITE-QT6h-18" parent="_TG2oPKM00oFITE-QT6h-16" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="260" y="52" as="geometry" />
+        </mxCell>
+        <mxCell id="_TG2oPKM00oFITE-QT6h-19" parent="_TG2oPKM00oFITE-QT6h-16" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+ List&amp;lt;Product&amp;gt; listarTodos()&lt;div&gt;+ Optional &amp;lt;Product&amp;gt; listarPorId (Long id)&lt;/div&gt;&lt;div&gt;+ Product criar (Product product)&lt;/div&gt;&lt;div&gt;+ void deletar (Long id)&lt;/div&gt;&lt;div&gt;+ Product atualizar (Long id, Product product)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="90" width="260" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="_TG2oPKM00oFITE-QT6h-20" edge="1" parent="1" source="_TG2oPKM00oFITE-QT6h-16" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" target="_TG2oPKM00oFITE-QT6h-9" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="230" y="320" as="sourcePoint" />
+            <mxPoint x="390" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_TG2oPKM00oFITE-QT6h-21" edge="1" parent="1" source="_TG2oPKM00oFITE-QT6h-19" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;entryX=0.995;entryY=0.139;entryDx=0;entryDy=0;entryPerimeter=0;exitX=-0.004;exitY=0.278;exitDx=0;exitDy=0;exitPerimeter=0;" target="_TG2oPKM00oFITE-QT6h-4" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="70" y="280" as="sourcePoint" />
+            <mxPoint x="230" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_TG2oPKM00oFITE-QT6h-22" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="ProductController" vertex="1">
+          <mxGeometry height="150" width="355" x="62.5" y="460" as="geometry" />
+        </mxCell>
+        <mxCell id="_TG2oPKM00oFITE-QT6h-23" parent="_TG2oPKM00oFITE-QT6h-22" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="- ProductService service" vertex="1">
+          <mxGeometry height="26" width="355" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="_TG2oPKM00oFITE-QT6h-24" parent="_TG2oPKM00oFITE-QT6h-22" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="355" y="52" as="geometry" />
+        </mxCell>
+        <mxCell id="_TG2oPKM00oFITE-QT6h-25" parent="_TG2oPKM00oFITE-QT6h-22" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+ ResponseEntity&amp;lt;List&amp;lt;Product&amp;gt;&amp;gt; listarTodos()&lt;div&gt;+ ResponseEntity&amp;lt;Product&amp;gt; listarPorId (Long id)&lt;/div&gt;&lt;div&gt;+ ResponseEntity&amp;lt;Product&amp;gt; criar (Product product)&lt;/div&gt;&lt;div&gt;+ ResponseEntity&amp;lt;?&amp;gt; deletar (Long id)&lt;/div&gt;&lt;div&gt;+ ResponseEntity&amp;lt;Product&amp;gt; atualizar (Long id, Product product)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="90" width="355" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="_TG2oPKM00oFITE-QT6h-26" edge="1" parent="1" source="_TG2oPKM00oFITE-QT6h-22" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.504;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;" target="_TG2oPKM00oFITE-QT6h-19" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="150" y="400" as="sourcePoint" />
+            <mxPoint x="310" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_TG2oPKM00oFITE-QT6h-27" edge="1" parent="1" source="_TG2oPKM00oFITE-QT6h-23" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" target="_TG2oPKM00oFITE-QT6h-4" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="150" y="400" as="sourcePoint" />
+            <mxPoint x="310" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_TG2oPKM00oFITE-QT6h-28" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="CategoryEnum" vertex="1">
+          <mxGeometry height="260" width="180" x="-580" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="_TG2oPKM00oFITE-QT6h-29" parent="_TG2oPKM00oFITE-QT6h-28" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="&lt;span class=&quot;ͼt&quot;&gt;ELECTRONICS&lt;/span&gt;,&lt;br&gt;    &lt;span class=&quot;ͼt&quot;&gt;CLOTHING&lt;/span&gt;,&lt;br&gt;    &lt;span class=&quot;ͼt&quot;&gt;FOOD&lt;/span&gt;,&lt;br&gt;    &lt;span class=&quot;ͼt&quot;&gt;BEVERAGES&lt;/span&gt;,&lt;br&gt;    &lt;span class=&quot;ͼt&quot;&gt;BOOKS&lt;/span&gt;,&lt;br&gt;    &lt;span class=&quot;ͼt&quot;&gt;HOME_APPLIANCES&lt;/span&gt;,&lt;br&gt;    &lt;span class=&quot;ͼt&quot;&gt;FURNITURE&lt;/span&gt;,&lt;br&gt;    &lt;span class=&quot;ͼt&quot;&gt;BEAUTY&lt;/span&gt;,&lt;br&gt;    &lt;span class=&quot;ͼt&quot;&gt;HEALTH&lt;/span&gt;,&lt;br&gt;    &lt;span class=&quot;ͼt&quot;&gt;SPORTS&lt;/span&gt;,&lt;br&gt;    &lt;span class=&quot;ͼt&quot;&gt;TOYS&lt;/span&gt;,&lt;br&gt;    &lt;span class=&quot;ͼt&quot;&gt;AUTOMOTIVE&lt;/span&gt;,&lt;br&gt;    &lt;span class=&quot;ͼt&quot;&gt;OFFICE_SUPPLIES&lt;/span&gt;,&lt;br&gt;    &lt;span class=&quot;ͼt&quot;&gt;PET_SUPPLIES&lt;/span&gt;,&lt;br&gt;    &lt;span class=&quot;ͼt&quot;&gt;OTHER&lt;/span&gt;" vertex="1">
+          <mxGeometry height="234" width="180" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="_TG2oPKM00oFITE-QT6h-36" edge="1" parent="1" source="_TG2oPKM00oFITE-QT6h-2" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" target="_TG2oPKM00oFITE-QT6h-29" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="-470" y="260" as="sourcePoint" />
+            <mxPoint x="-400" y="285" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
