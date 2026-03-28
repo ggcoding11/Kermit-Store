@@ -1,10 +1,8 @@
 package com.example.kermit_store.service;
-
 import com.example.kermit_store.model.Product;
 import com.example.kermit_store.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -41,6 +39,6 @@ public class ProductService {
         antigo.setQuantity(novo.getQuantity());
         antigo.setImageName(novo.getImageName());
 
-        return antigo;
+        return repository.save(antigo);
     }
 }
