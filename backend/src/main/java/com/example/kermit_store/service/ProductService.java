@@ -1,4 +1,6 @@
 package com.example.kermit_store.service;
+import com.example.kermit_store.dto.ProductCreateDTO;
+import com.example.kermit_store.dto.ProductReponseDTO;
 import com.example.kermit_store.model.Product;
 import com.example.kermit_store.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,16 +13,23 @@ public class ProductService {
     @Autowired
     private ProductRepository repository;
 
-    public List<Product> listarTodos() {
-        return repository.findAll();
+    public List<ProductReponseDTO> listarTodos() {
+        List<Product> products = repository.findAll();
+
+        return products.stream().map(product -> toDto(product)).toList();
     }
 
-    public Optional<Product> listarPorId(Long id){
-        return repository.findById(id);
+    public ProductReponseDTO listarPorId(Long id){
+        Product product = repository.findById(id).get();
+        return toDto(product);
     }
 
-    public Product criar (Product product) {
-        return repository.save(product);
+    public ProductReponseDTO criar (ProductCreateDTO dto) {
+        Product product = toEntity(dto);
+
+        Product saved = repository.save(product);
+
+        return toDto(saved);
     }
 
     public void deletar (Long id) {
@@ -40,5 +49,21 @@ public class ProductService {
         antigo.setImageName(novo.getImageName());
 
         return repository.save(antigo);
+    }
+
+    public ProductReponseDTO toDto(Product product) {
+        return new ProductReponseDTO(product.getId(), product.getName(), product.getBrand());
+    }
+
+    public Product toEntity(ProductCreateDTO dto) {
+        Product product = new Product();
+
+        product.setName(dto.getName());
+        product.setCategory(dto.getCategory());
+        product.setPrice(dto.getPrice());
+        product.setQuantity(dto.getQuantity());
+        product.setCreationDate(dto.getCreationDate());
+
+        return product;
     }
 }

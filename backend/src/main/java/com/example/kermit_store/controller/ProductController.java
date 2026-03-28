@@ -1,5 +1,7 @@
 package com.example.kermit_store.controller;
 
+import com.example.kermit_store.dto.ProductCreateDTO;
+import com.example.kermit_store.dto.ProductReponseDTO;
 import com.example.kermit_store.model.Product;
 import com.example.kermit_store.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,22 +21,22 @@ public class ProductController {
     private ProductService service;
 
     @GetMapping
-    public ResponseEntity<List<Product>> listarTodos() {
-        List<Product> request = service.listarTodos();
+    public ResponseEntity<List<ProductReponseDTO>> listarTodos() {
+        List<ProductReponseDTO> request = service.listarTodos();
 
         return ResponseEntity.status(HttpStatus.OK).body(request);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Optional<Product>> listarPorId(@PathVariable Long id) {
-        Optional<Product> request = service.listarPorId(id);
+    public ResponseEntity<ProductReponseDTO> listarPorId(@PathVariable Long id) {
+        ProductReponseDTO request = service.listarPorId(id);
 
         return ResponseEntity.status(HttpStatus.OK).body(request);
     }
 
     @PostMapping
-    public ResponseEntity<Product> criar(@RequestBody Product product) {
-        Product request = service.criar(product);
+    public ResponseEntity<ProductReponseDTO> criar(@RequestBody ProductCreateDTO product) {
+        ProductReponseDTO request = service.criar(product);
 
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(product.getId()).toUri();
 
