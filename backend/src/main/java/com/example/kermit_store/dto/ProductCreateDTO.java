@@ -27,7 +27,7 @@ public class ProductCreateDTO {
     private LocalDate creationDate;
 
     @NotNull(message = "Quantity is required")
-    @Positive(message = "Quantity cannot be less than 0")
+    @PositiveOrZero(message = "Quantity cannot be less than 0")
     private Integer quantity;
 
     @NotBlank(message = "Description is required")
