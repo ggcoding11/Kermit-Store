@@ -20,7 +20,7 @@ public class ProductService {
     }
 
     public ProductResponseDTO listarPorId(Long id){
-        Product product = repository.findById(id).get();
+        Product product = repository.findById(id).orElseThrow(() -> new RuntimeException("Product not found"));
 
         return toDto(product);
     }
@@ -38,7 +38,7 @@ public class ProductService {
     }
 
     public ProductResponseDTO atualizar (Long id, ProductUpdateDTO novo) {
-        Product antigo = repository.findById(id).get();
+        Product antigo = repository.findById(id).orElseThrow(() -> new RuntimeException("Product not found"));
 
         antigo.setName(novo.getName());
         antigo.setBrand(novo.getBrand());

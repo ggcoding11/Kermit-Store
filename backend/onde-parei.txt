@@ -1,1 +1,2 @@
-- Parei na implementação do DTO nos métodos já existentes
+- Criar as Exceptions que eu vou usar
+- Ver como criar o handler global
