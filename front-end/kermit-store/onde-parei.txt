@@ -1,0 +1,3 @@
+- Melhor o CSS dos Link
+- Formatar melhor o cabeçalho em App.jsx
+- Continuar o projeto

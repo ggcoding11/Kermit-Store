@@ -1,0 +1,8 @@
+a {
+  color: white !important;
+  text-decoration: none !important;
+}
+
+a * {
+  color: black !important;
+}

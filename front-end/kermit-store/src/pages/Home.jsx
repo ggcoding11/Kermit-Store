@@ -1,7 +1,7 @@
 import React from "react";
 import { MdSort } from "react-icons/md";
 import { CiSearch } from "react-icons/ci";
-
+import { Link } from "react-router-dom";
 import "../css/Home.css";
 
 const Home = () => {
@@ -10,10 +10,19 @@ const Home = () => {
       <section>
         <div className="row gy-2 mb-4">
           <div className="col-12 col-sm-7 d-flex justify-content-center justify-content-sm-start gap-2">
-            <button type="button" className="btn btn-primary" title="Create a new product">
-              New product
+            <a href="">Teste</a>
+            <button
+              type="button"
+              className="btn btn-primary"
+              title="Create a new product"
+            >
+              <Link to="/create">New product</Link>
             </button>
-            <button type="button" className="btn btn-secondary" title="Sort products">
+            <button
+              type="button"
+              className="btn btn-secondary"
+              title="Sort products"
+            >
               <MdSort />
             </button>
           </div>
