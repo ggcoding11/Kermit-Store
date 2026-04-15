@@ -1,3 +1,1 @@
-- Melhor o CSS dos Link
-- Formatar melhor o cabeçalho em App.jsx
-- Continuar o projeto
+- Terminar a página de create (o CSS, adicionar title nos button, colocar placeholder, colocar os masks nos input)

@@ -10,13 +10,12 @@ const Home = () => {
       <section>
         <div className="row gy-2 mb-4">
           <div className="col-12 col-sm-7 d-flex justify-content-center justify-content-sm-start gap-2">
-            <a href="">Teste</a>
             <button
               type="button"
               className="btn btn-primary"
               title="Create a new product"
             >
-              <Link to="/create">New product</Link>
+              <Link className="text-white link-underline link-underline-opacity-0" to="/create">New product</Link>
             </button>
             <button
               type="button"

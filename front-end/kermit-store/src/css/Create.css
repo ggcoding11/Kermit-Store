@@ -1,0 +1,11 @@
+.btn-create,
+.btn-cancel {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .btn-create,
+  .btn-cancel {
+    width: 40%;
+  }
+}
