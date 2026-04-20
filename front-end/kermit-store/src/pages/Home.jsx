@@ -1,12 +1,16 @@
 import React from "react";
 import { MdSort } from "react-icons/md";
 import { CiSearch } from "react-icons/ci";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import Header from "../components/Header";
 import "../css/Home.css";
 
 const Home = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="container min-vh-100">
+      <Header />
       <section>
         <div className="row gy-2 mb-4">
           <div className="col-12 col-sm-7 d-flex justify-content-center justify-content-sm-start gap-2">
@@ -14,8 +18,9 @@ const Home = () => {
               type="button"
               className="btn btn-primary"
               title="Create a new product"
+              onClick={() => navigate("/create")}
             >
-              <Link className="text-white link-underline link-underline-opacity-0" to="/create">New product</Link>
+              New product
             </button>
             <button
               type="button"

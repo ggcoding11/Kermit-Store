@@ -1,77 +1,111 @@
 import React from "react";
-import "../css/Create.css"
+import { Link, useNavigate } from "react-router-dom";
+import { NumericFormat } from "react-number-format";
+import "../css/Create.css";
 
 const Create = () => {
+  const navigate = useNavigate();
+
   return (
-    <div className="container">
-      <h1 className="text-center">New product</h1>
+    <div className="container min-vh-100 d-flex flex-column justify-content-center">
+      <h1 className="text-center mb-4">New product</h1>
 
       <form>
         <div className="mb-3">
-          <label htmlFor="product-name" className="form-label">
-            Name
-          </label>
-          <input type="text" className="form-control" id="product-name" />
-        </div>
-
-        <div className="mb-3">
-          <label htmlFor="product-brand" className="form-label">
-            Brand
-          </label>
-          <input type="text" className="form-control" id="product-brand" />
-        </div>
-
-        <div className="row mb-3">
-          <div className="col-12 col-sm-6">
-            <label htmlFor="product-price" className="form-label">
-              Price
-            </label>
-            <input type="number" className="form-control" id="product-price" />
-          </div>
-          <div className="col-12 col-sm-6">
-            <label htmlFor="product-category" className="form-label">
-              Category
-            </label>
-            <input type="text" className="form-control" id="product-category" />
-          </div>
-        </div>
-
-        <div className="row mb-3">
-          <div className="col-12 col-sm-6">
-            <label htmlFor="product-image" className="form-label">
-              Product image
-            </label>
-            <input className="form-control" type="file" id="product-image" />
-          </div>
-          <div className="col-12 col-sm-6">
-            <label htmlFor="product-quantity" className="form-label">
-              Quantity
-            </label>
+          <label className="form-label w-100">
+            Name:
             <input
-              type="number"
+              type="text"
+              placeholder="Xbox 360"
               className="form-control"
-              id="product-quantity"
             />
+          </label>
+        </div>
+
+        <div className="mb-3">
+          <label className="form-label w-100">
+            Brand:
+            <input
+              type="text"
+              placeholder="Microsoft"
+              className="form-control"
+            />
+          </label>
+        </div>
+
+        <div className="row gy-3 mb-3">
+          <div className="col-12 col-sm-6">
+            <label className="form-label w-100">
+              Price:
+              <NumericFormat
+                placeholder="R$ 0,00"
+                prefix="R$ "
+                decimalScale={2}
+                fixedDecimalScale={true}
+                allowNegative={false}
+                thousandSeparator="."
+                decimalSeparator=","
+                className="form-control"
+              />
+            </label>
+          </div>
+          <div className="col-12 col-sm-6">
+            <label className="form-label w-100">
+              Category:
+              <input
+                type="text"
+                placeholder="Eletronics"
+                className="form-control"
+              />
+            </label>
+          </div>
+        </div>
+
+        <div className="row gy-3 mb-3">
+          <div className="col-12 col-sm-6">
+            <label className="form-label w-100">
+              Product image:
+              <input className="form-control" type="file" />
+            </label>
+          </div>
+          <div className="col-12 col-sm-6">
+            <label className="form-label w-100">
+              Quantity:
+              <NumericFormat
+                placeholder="0"
+                allowNegative={false}
+                decimalScale={0}
+                className="form-control"
+              />
+            </label>
           </div>
         </div>
 
         <div className="mb-3">
-          <label htmlFor="product-description" className="form-label">
-            Description
+          <label className="form-label w-100">
+            Description:
+            <textarea
+              placeholder="The product includes: 1 console, 2 controllers, and 1 accessory (Kinect)."
+              className="form-control"
+            />
           </label>
-          <input
-            type="text"
-            className="form-control"
-            id="product-description"
-          />
         </div>
 
         <div className="d-flex justify-content-center align-items-center gap-4">
-          <button type="submit" className="btn-create btn btn-primary">
-            Submit
+          <button
+            type="submit"
+            className="btn-create btn btn-primary"
+            title="Create product"
+          >
+            Create
           </button>
 
-          <button type="submit" className="btn-cancel btn btn-danger">
+          <button
+            onClick={() => navigate("/")}
+            type="button"
+            className="btn-cancel btn btn-danger"
+            title="Cancel operation"
+          >
             Cancel
           </button>
         </div>

@@ -1,1 +1,1 @@
-- Terminar a página de create (o CSS, adicionar title nos button, colocar placeholder, colocar os masks nos input)
+- Ver como fazer a imagem da logo não ficar carregando toda hora
