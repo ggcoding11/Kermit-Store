@@ -4,6 +4,8 @@ import { CiSearch } from "react-icons/ci";
 import { Link, useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 import "../css/Home.css";
+import { motion } from "framer-motion";
+import { data } from "../data/Data";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -14,21 +16,24 @@ const Home = () => {
       <section>
         <div className="row gy-2 mb-4">
           <div className="col-12 col-sm-7 d-flex justify-content-center justify-content-sm-start gap-2">
-            <button
+            <motion.button
               type="button"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               className="btn btn-primary"
-              title="Create a new product"
               onClick={() => navigate("/create")}
             >
               New product
-            </button>
-            <button
+            </motion.button>
+            <motion.button
               type="button"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               className="btn btn-secondary"
               title="Sort products"
             >
               <MdSort />
-            </button>
+            </motion.button>
           </div>
           <div className="col-12 col-sm-5 d-flex justify-content-end">
             <div className="search-bar input-group">
@@ -66,75 +71,34 @@ const Home = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>Image</td>
-                    <td>2025-11-20</td>
-                    <td>R$ 25,00</td>
-                    <td className="d-flex gap-2">
-                      <button
-                        className="btn btn-primary"
-                        title="Edit the product"
-                      >
-                        Edit
-                      </button>
-                      <button
-                        className="btn btn-danger"
-                        title="Delete the product"
-                      >
-                        Delete
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>Image</td>
-                    <td>2025-11-20</td>
-                    <td>R$ 25,00</td>
-                    <td className="d-flex gap-2">
-                      <button
-                        className="btn btn-primary"
-                        title="Edit the product"
-                      >
-                        Edit
-                      </button>
-                      <button
-                        className="btn btn-danger"
-                        title="Delete the product"
-                      >
-                        Delete
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>Image</td>
-                    <td>2025-11-20</td>
-                    <td>R$ 25,00</td>
-                    <td className="d-flex gap-2">
-                      <button
-                        className="btn btn-primary"
-                        title="Edit the product"
-                      >
-                        Edit
-                      </button>
-                      <button
-                        className="btn btn-danger"
-                        title="Delete the product"
-                      >
-                        Delete
-                      </button>
-                    </td>
-                  </tr>
+                  {data.map((product) => (
+                    <tr key={product.id}>
+                      <th scope="row">{product.id}</th>
+                      <td>{product.name}</td>
+                      <td>{product.brand}</td>
+                      <td>{product.category}</td>
+                      <td>{product.image}</td>
+                      <td>{product.createdAt}</td>
+                      <td>{product.price}</td>
+                      <td className="d-flex gap-2">
+                        <motion.button
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                          className="btn btn-primary"
+                          onClick={() => navigate(`/update/${product.id}`)}
+                        >
+                          Edit
+                        </motion.button>
+                        <motion.button
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                          className="btn btn-danger"
+                        >
+                          Delete
+                        </motion.button>
+                      </td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>

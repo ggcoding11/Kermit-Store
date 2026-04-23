@@ -1,15 +1,26 @@
-import React from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { NumericFormat } from "react-number-format";
-import "../css/Create.css";
 import { motion } from "framer-motion";
+import React, { useEffect, useState } from "react";
+import { NumericFormat } from "react-number-format";
+import { useNavigate, useParams } from "react-router-dom";
+import { data } from "../data/Data";
 
-const Create = () => {
+const Update = () => {
   const navigate = useNavigate();
+  const { id } = useParams();
+
+  const [product, setProduct] = useState();
+
+  useEffect(() => {
+    setProduct(data.filter((p) => p.id == id));
+  }, [id]);
+
+  useEffect(() => {
+    console.log(product);
+  }, [product]);
 
   return (
     <div className="container min-vh-100 d-flex flex-column justify-content-center p-2">
-      <h1 className="text-center mb-4">New product</h1>
+      <h1 className="text-center mb-4">Edit product</h1>
 
       <form>
         <div className="mb-3">
@@ -99,7 +110,7 @@ const Create = () => {
             whileTap={{ scale: 0.95 }}
             className="btn-create btn btn-primary"
           >
-            Create
+            Update
           </motion.button>
 
           <motion.button
@@ -117,4 +128,4 @@ const Create = () => {
   );
 };
 
-export default Create;
+export default Update;

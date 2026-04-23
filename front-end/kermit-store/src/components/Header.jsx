@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import KermitLogo from "/logo.png";
+import KermitLogo from "/images/logo.png";
 
 const Header = () => {
   return (

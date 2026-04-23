@@ -1,1 +1,1 @@
-- Ver como fazer a imagem da logo não ficar carregando toda hora
+- Terminar a página de update
