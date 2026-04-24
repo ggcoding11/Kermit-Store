@@ -12,9 +12,13 @@ import { Modal } from "react-responsive-modal";
 const Home = () => {
   const navigate = useNavigate();
 
-  const [open, setOpen] = useState(false);
-  const onOpenModal = () => setOpen(true);
-  const onCloseModal = () => setOpen(false);
+  const [openDelete, setOpenDelete] = useState(false);
+  const onOpenModalDelete = () => setOpenDelete(true);
+  const onCloseModalDelete = () => setOpenDelete(false);
+
+  const [openSort, setOpenSort] = useState(false);
+  const onOpenModalSort = () => setOpenSort(true);
+  const onCloseModalSort = () => setOpenSort(false);
 
   const [idToDelete, setIdToDelete] = useState("");
 
@@ -43,6 +47,7 @@ const Home = () => {
               whileTap={{ scale: 0.95 }}
               className="btn btn-secondary"
               title="Sort products"
+              onClick={() => onOpenModalSort()}
             >
               <MdSort />
             </motion.button>
@@ -106,7 +111,7 @@ const Home = () => {
                           whileTap={{ scale: 0.95 }}
                           className="btn btn-danger"
                           onClick={() => {
-                            onOpenModal();
+                            onOpenModalDelete();
                             setIdToDelete(product.id);
                           }}
                         >
@@ -157,8 +162,8 @@ const Home = () => {
       </section>
 
       <Modal
-        open={open}
-        onClose={onCloseModal}
+        open={openDelete}
+        onClose={onCloseModalDelete}
         center
         showCloseIcon={false}
         classNames={{
@@ -176,10 +181,41 @@ const Home = () => {
             </button>
             <button
               className="btn btn-secondary"
-              onClick={() => onCloseModal()}
+              onClick={() => onCloseModalDelete()}
             >
               Fechar
             </button>
+          </div>
+        </div>
+      </Modal>
+
+      <Modal
+        open={openSort}
+        onClose={onCloseModalSort}
+        center
+        classNames={{
+          modal: "customModal",
+        }}
+      >
+        <div className="d-flex flex-column gap-2">
+          <h1 className="text-center fs-3">Sort products</h1>
+
+          <div>
+            <h3 className="fs-4">By product name:</h3>
+
+            <div className="d-flex gap-2">
+              <button className="btn btn-primary">A-Z</button>
+              <button className="btn btn-danger">Z-A</button>
+            </div>
+          </div>
+
+          <div>
+            <h3 className="fs-4">By price:</h3>
+
+            <div className="d-flex gap-2">
+              <button className="btn btn-primary">Ascending</button>
+              <button className="btn btn-danger">Descending</button>
+            </div>
           </div>
         </div>
       </Modal>
