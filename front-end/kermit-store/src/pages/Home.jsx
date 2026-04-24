@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { MdSort } from "react-icons/md";
 import { CiSearch } from "react-icons/ci";
 import { Link, useNavigate } from "react-router-dom";
@@ -6,9 +6,21 @@ import Header from "../components/Header";
 import "../css/Home.css";
 import { motion } from "framer-motion";
 import { data } from "../data/Data";
+import "react-responsive-modal/styles.css";
+import { Modal } from "react-responsive-modal";
 
 const Home = () => {
   const navigate = useNavigate();
+
+  const [open, setOpen] = useState(false);
+  const onOpenModal = () => setOpen(true);
+  const onCloseModal = () => setOpen(false);
+
+  const [idToDelete, setIdToDelete] = useState("");
+
+  const deleteProduct = () => {
+    alert("Produto " + idToDelete + " foi deletado!");
+  };
 
   return (
     <div className="container min-vh-100">
@@ -93,6 +105,10 @@ const Home = () => {
                           whileHover={{ scale: 1.05 }}
                           whileTap={{ scale: 0.95 }}
                           className="btn btn-danger"
+                          onClick={() => {
+                            onOpenModal();
+                            setIdToDelete(product.id);
+                          }}
                         >
                           Delete
                         </motion.button>
@@ -139,6 +155,34 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      <Modal
+        open={open}
+        onClose={onCloseModal}
+        center
+        showCloseIcon={false}
+        classNames={{
+          modal: "customModal",
+        }}
+      >
+        <div className="d-flex flex-column gap-2">
+          <h1 className="text-center fs-4">
+            Do you want to delete this product?
+          </h1>
+
+          <div className="d-flex justify-content-evenly">
+            <button className="btn btn-danger" onClick={() => deleteProduct()}>
+              Deletar
+            </button>
+            <button
+              className="btn btn-secondary"
+              onClick={() => onCloseModal()}
+            >
+              Fechar
+            </button>
+          </div>
+        </div>
+      </Modal>
     </div>
   );
 };
