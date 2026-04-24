@@ -8,14 +8,28 @@ const Update = () => {
   const navigate = useNavigate();
   const { id } = useParams();
 
-  const [product, setProduct] = useState();
+  const [product, setProduct] = useState(null);
+
+  const [name, setName] = useState("");
+  const [brand, setBrand] = useState("");
+  const [price, setPrice] = useState("");
+  const [category, setCategory] = useState("");
+  const [quantity, setQuantity] = useState("");
+  const [description, setDescription] = useState("");
 
   useEffect(() => {
-    setProduct(data.filter((p) => p.id == id));
+    setProduct(data.find((p) => p.id == id));
   }, [id]);
 
   useEffect(() => {
-    console.log(product);
+    if (product != null) {
+      setName(product.name);
+      setBrand(product.brand);
+      setPrice(product.price);
+      setCategory(product.category);
+      setQuantity(product.quantity);
+      setDescription(product.description);
+    }
   }, [product]);
 
   return (
@@ -30,6 +44,8 @@ const Update = () => {
               type="text"
               placeholder="Xbox 360"
               className="form-control"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
             />
           </label>
         </div>
@@ -41,6 +57,8 @@ const Update = () => {
               type="text"
               placeholder="Microsoft"
               className="form-control"
+              value={brand}
+              onChange={(e) => setBrand(e.target.value)}
             />
           </label>
         </div>
@@ -58,6 +76,8 @@ const Update = () => {
                 thousandSeparator="."
                 decimalSeparator=","
                 className="form-control"
+                value={price}
+                onChange={(e) => setPrice(e.target.value)}
               />
             </label>
           </div>
@@ -68,6 +88,8 @@ const Update = () => {
                 type="text"
                 placeholder="Eletronics"
                 className="form-control"
+                value={category}
+                onChange={(e) => setCategory(e.target.value)}
               />
             </label>
           </div>
@@ -88,6 +110,8 @@ const Update = () => {
                 allowNegative={false}
                 decimalScale={0}
                 className="form-control"
+                value={quantity}
+                onChange={(e) => setQuantity(e.target.value)}
               />
             </label>
           </div>
@@ -99,6 +123,8 @@ const Update = () => {
             <textarea
               placeholder="The product includes: 1 console, 2 controllers, and 1 accessory (Kinect)."
               className="form-control"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
             />
           </label>
         </div>
