@@ -194,7 +194,7 @@ const Home = () => {
         onClose={onCloseModalSort}
         center
         classNames={{
-          modal: "customModal",
+          modal: "customModalSort",
         }}
       >
         <div className="d-flex flex-column gap-2">
@@ -204,8 +204,20 @@ const Home = () => {
             <h3 className="fs-4">By product name:</h3>
 
             <div className="d-flex gap-2">
-              <button className="btn btn-primary">A-Z</button>
-              <button className="btn btn-danger">Z-A</button>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="btn btn-primary"
+              >
+                A-Z
+              </motion.button>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="btn btn-danger"
+              >
+                Z-A
+              </motion.button>
             </div>
           </div>
 
@@ -213,8 +225,20 @@ const Home = () => {
             <h3 className="fs-4">By price:</h3>
 
             <div className="d-flex gap-2">
-              <button className="btn btn-primary">Ascending</button>
-              <button className="btn btn-danger">Descending</button>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="btn btn-primary"
+              >
+                Ascending
+              </motion.button>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="btn btn-danger"
+              >
+                Descending
+              </motion.button>
             </div>
           </div>
         </div>
