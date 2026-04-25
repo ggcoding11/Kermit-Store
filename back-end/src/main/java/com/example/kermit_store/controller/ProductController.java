@@ -21,8 +21,11 @@ public class ProductController {
     private ProductService service;
 
     @GetMapping
-    public ResponseEntity<List<ProductResponseDTO>> listarTodos() {
-        List<ProductResponseDTO> request = service.listarTodos();
+    public ResponseEntity<List<ProductResponseDTO>> listarTodos(
+      @RequestParam(defaultValue = "name") String sort,
+      @RequestParam(defaultValue = "asc") String direction
+    ) {
+        List<ProductResponseDTO> request = service.listarTodos(sort, direction);
 
         return ResponseEntity.status(HttpStatus.OK).body(request);
     }

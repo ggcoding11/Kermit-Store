@@ -6,6 +6,7 @@ import com.example.kermit_store.exceptions.ResourceNotFoundException;
 import com.example.kermit_store.model.Product;
 import com.example.kermit_store.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
@@ -14,8 +15,12 @@ public class ProductService {
     @Autowired
     private ProductRepository repository;
 
-    public List<ProductResponseDTO> listarTodos() {
-        List<Product> products = repository.findAll();
+    public List<ProductResponseDTO> listarTodos(String field, String direction) {
+        Sort sort = direction.equalsIgnoreCase("desc")
+                ? Sort.by(field).descending()
+                : Sort.by(field).ascending();
+
+        List<Product> products = repository.findAll(sort);
 
         return products.stream().map(product -> toDto(product)).toList();
     }

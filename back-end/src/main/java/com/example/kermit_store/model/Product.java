@@ -23,6 +23,7 @@ public class Product {
     private String name;
     private String brand;
     private Double price;
+    @Enumerated(EnumType.STRING)
     private CategoryEnum category;
     private String imageName;
     private LocalDate creationDate;

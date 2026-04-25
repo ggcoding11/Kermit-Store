@@ -1,2 +1,1 @@
-- Criar as Exceptions que eu vou usar
-- Ver como criar o handler global
+- Parei na compreensão do novo código de listAll com Sort
